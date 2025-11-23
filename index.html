@@ -16,51 +16,254 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <style>
-            /* Estilos adicionales para los iconos cuando no hay imagen */
+            /* Estilos modernos y creativos */
+            .masthead {
+                background-image: url('assets/img/nuevofondo.png');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }
+            
+            /* Overlay oscuro sobre el fondo */
+            .masthead::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(33, 37, 41, 0.7);
+            }
+            
+            .masthead .container {
+                position: relative;
+                z-index: 1;
+            }
+            
+            /* Logo principal modernizado */
+            .masthead-logo {
+                max-width: 300px;
+                margin: 0 auto 2rem;
+                filter: drop-shadow(0 10px 30px rgba(232, 182, 0, 0.4));
+                animation: floatLogo 3s ease-in-out infinite;
+            }
+            
+            @keyframes floatLogo {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-20px); }
+            }
+            
+            .masthead-logo img {
+                width: 100%;
+                height: auto;
+            }
+            
+            /* Botón principal con color amarillo */
+            .btn-primary {
+                background-color: #e8b600 !important;
+                border-color: #e8b600 !important;
+                color: #212529 !important;
+                font-weight: bold;
+                transition: all 0.3s ease;
+            }
+            
+            .btn-primary:hover {
+                background-color: #ffcc00 !important;
+                border-color: #ffcc00 !important;
+                transform: translateY(-3px);
+                box-shadow: 0 10px 25px rgba(232, 182, 0, 0.4);
+            }
+            
+            /* Iconos para portafolio sin imagen */
             .portfolio-icon {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 height: 300px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: linear-gradient(135deg, #3f3c39 0%, #212529 100%);
                 border-radius: 8px;
-                transition: all 0.3s ease;
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .portfolio-icon::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(232, 182, 0, 0.3), transparent);
+                transition: left 0.5s ease;
+            }
+            
+            .portfolio-item:hover .portfolio-icon::before {
+                left: 100%;
             }
             
             .portfolio-icon i {
                 font-size: 80px;
-                color: white;
-                transition: all 0.3s ease;
+                color: #e8b600;
+                transition: all 0.4s ease;
+                position: relative;
+                z-index: 1;
             }
             
             .portfolio-item:hover .portfolio-icon {
-                transform: scale(1.05);
-                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                transform: scale(1.05) rotateZ(2deg);
+                box-shadow: 0 15px 40px rgba(232, 182, 0, 0.4);
+                background: linear-gradient(135deg, #e8b600 0%, #ffcc00 100%);
             }
             
             .portfolio-item:hover .portfolio-icon i {
-                transform: scale(1.1);
+                transform: scale(1.15) rotateZ(-2deg);
+                color: #212529;
             }
             
-            /* Gradientes diferentes para cada tipo */
-            .gradient-taller {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* Variantes de iconos con bordes decorativos */
+            .icon-border-1 {
+                border: 3px solid #e8b600;
+                box-shadow: inset 0 0 20px rgba(232, 182, 0, 0.2);
             }
             
-            .gradient-investigacion {
-                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            .icon-border-2 {
+                border-left: 5px solid #e8b600;
+                border-right: 5px solid #e8b600;
             }
             
-            .gradient-lab {
-                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            .icon-border-3 {
+                border-top: 5px solid #e8b600;
+                border-bottom: 5px solid #e8b600;
             }
             
-            .gradient-parcial {
-                background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            /* Sección de contacto moderna */
+            .contact-box {
+                background: #ffffff;
+                border-radius: 15px;
+                transition: all 0.4s ease;
+                border: 3px solid transparent;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                position: relative;
+                overflow: hidden;
             }
             
-            .gradient-examen {
-                background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            .contact-box::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(90deg, #e8b600, #ffcc00);
+                transform: scaleX(0);
+                transition: transform 0.4s ease;
+            }
+            
+            .contact-box:hover::before {
+                transform: scaleX(1);
+            }
+            
+            .contact-box:hover {
+                transform: translateY(-10px);
+                border-color: #e8b600;
+                box-shadow: 0 15px 40px rgba(232, 182, 0, 0.3);
+            }
+            
+            .contact-box i {
+                transition: all 0.4s ease;
+            }
+            
+            .contact-box:hover i {
+                transform: scale(1.2) rotateY(360deg);
+            }
+            
+            /* Títulos con acento amarillo */
+            .section-heading {
+                position: relative;
+                display: inline-block;
+            }
+            
+            .section-heading::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(90deg, transparent, #e8b600, transparent);
+                border-radius: 2px;
+            }
+            
+            /* Efectos hover en imágenes del portfolio */
+            .portfolio-item img {
+                transition: all 0.4s ease;
+            }
+            
+            .portfolio-item:hover img {
+                transform: scale(1.05);
+                filter: brightness(1.1);
+            }
+            
+            /* Footer con acento amarillo */
+            .footer {
+                background-color: #212529;
+                border-top: 3px solid #e8b600;
+            }
+            
+            .btn-social {
+                background-color: #3f3c39;
+                border-color: #3f3c39;
+                transition: all 0.3s ease;
+            }
+            
+            .btn-social:hover {
+                background-color: #e8b600;
+                border-color: #e8b600;
+                transform: translateY(-3px) rotateZ(360deg);
+            }
+            
+            /* Botones de descarga */
+            .btn-success {
+                background-color: #e8b600 !important;
+                border-color: #e8b600 !important;
+                color: #212529 !important;
+            }
+            
+            .btn-success:hover {
+                background-color: #ffcc00 !important;
+                border-color: #ffcc00 !important;
+                transform: translateX(5px);
+            }
+            
+            /* Animación de entrada para las tarjetas */
+            .portfolio-item {
+                animation: fadeInUp 0.6s ease forwards;
+                opacity: 0;
+            }
+            
+            .portfolio-item:nth-child(1) { animation-delay: 0.1s; }
+            .portfolio-item:nth-child(2) { animation-delay: 0.2s; }
+            .portfolio-item:nth-child(3) { animation-delay: 0.3s; }
+            .portfolio-item:nth-child(4) { animation-delay: 0.4s; }
+            
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            /* Mejora visual de modales */
+            .modal-body h2 {
+                color: #e8b600;
+                border-bottom: 3px solid #e8b600;
+                padding-bottom: 10px;
             }
         </style>
     </head>
@@ -85,12 +288,16 @@
                 </div>
             </div>
         </nav>
+        
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading">Magdalena Gonzalez</div>
-                <div class="masthead-heading text-uppercase">Portafolio</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#sobremi">Bienvenido</a>
+                <div class="masthead-logo">
+                    <img src="assets/img/Ttitulo.png" alt="Magdalena González - Portafolio" />
+                </div>
+                <div class="masthead-subheading">Estudiante de Ciberseguridad</div>
+                <div class="masthead-heading text-uppercase">Portafolio de Programación</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#sobremi">Explorar mi trabajo</a>
             </div>
         </header>
         
@@ -195,7 +402,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <div class="portfolio-icon gradient-investigacion">
+                                <div class="portfolio-icon icon-border-1">
                                     <i class="fas fa-search"></i>
                                 </div>
                             </a>
@@ -213,7 +420,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <div class="portfolio-icon gradient-investigacion">
+                                <div class="portfolio-icon icon-border-2">
                                     <i class="fas fa-book-open"></i>
                                 </div>
                             </a>
@@ -242,7 +449,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <div class="portfolio-icon gradient-lab">
+                                <div class="portfolio-icon icon-border-3">
                                     <i class="fas fa-flask"></i>
                                 </div>
                             </a>
@@ -260,7 +467,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <div class="portfolio-icon gradient-lab">
+                                <div class="portfolio-icon icon-border-1">
                                     <i class="fas fa-laptop-code"></i>
                                 </div>
                             </a>
@@ -289,7 +496,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <div class="portfolio-icon gradient-parcial">
+                                <div class="portfolio-icon icon-border-2">
                                     <i class="fas fa-pencil-alt"></i>
                                 </div>
                             </a>
@@ -307,7 +514,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <div class="portfolio-icon gradient-parcial">
+                                <div class="portfolio-icon icon-border-3">
                                     <i class="fas fa-file-alt"></i>
                                 </div>
                             </a>
@@ -352,7 +559,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <div class="portfolio-icon gradient-examen">
+                                <div class="portfolio-icon icon-border-1">
                                     <i class="fas fa-graduation-cap"></i>
                                 </div>
                             </a>
@@ -371,32 +578,32 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Contacto</h2>
-                    <h3 class="section-subheading text-muted">Puedes encontrarme en las siguientes plataformas</h3>
+                    <h3 class="section-subheading text-muted">¡Conectemos! Encuéntrame en las siguientes plataformas</h3>
                 </div>
                 <div class="row text-center mt-5">
                     <div class="col-md-4 mb-4">
-                        <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" class="text-decoration-none">
-                            <div class="contact-box p-4">
+                        <a href="https://www.linkedin.com/in/magdalenagonzalezpanama" target="_blank" class="text-decoration-none">
+                            <div class="contact-box p-5">
                                 <i class="fab fa-linkedin fa-4x mb-3" style="color: #0077b5;"></i>
-                                <h4>LinkedIn</h4>
+                                <h4 class="fw-bold">LinkedIn</h4>
                                 <p class="text-muted">Conéctate conmigo profesionalmente</p>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <a href="https://www.youtube.com/@tu-canal" target="_blank" class="text-decoration-none">
-                            <div class="contact-box p-4">
+                        <a href="https://www.youtube.com/@MagdalenaGonzalez-te9wk" target="_blank" class="text-decoration-none">
+                            <div class="contact-box p-5">
                                 <i class="fab fa-youtube fa-4x mb-3" style="color: #ff0000;"></i>
-                                <h4>YouTube</h4>
+                                <h4 class="fw-bold">YouTube</h4>
                                 <p class="text-muted">Mira mis videos y tutoriales</p>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <a href="mailto:tu-email@ejemplo.com" class="text-decoration-none">
-                            <div class="contact-box p-4">
-                                <i class="fas fa-envelope fa-4x mb-3" style="color: #d44638;"></i>
-                                <h4>Email</h4>
+                        <a href="mailto:magdalena.gonzalez@ejemplo.com" class="text-decoration-none">
+                            <div class="contact-box p-5">
+                                <i class="fas fa-envelope fa-4x mb-3" style="color: #e8b600;"></i>
+                                <h4 class="fw-bold">Email</h4>
                                 <p class="text-muted">Envíame un correo electrónico</p>
                             </div>
                         </a>
@@ -411,8 +618,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-start">Copyright &copy; Magdalena González 2024</div>
                     <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/tu-perfil" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="https://www.youtube.com/@tu-canal" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/magdalenagonzalezpanama" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.youtube.com/@MagdalenaGonzalez-te9wk" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
                         <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
@@ -434,9 +641,9 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Taller 1</h2>
                                     <p class="item-intro text-muted">Desarrollo de ejercicios prácticos</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/talleres/taller1.png" alt="Taller 1" />
+                                    <img class="img-fluid d-block mx-auto mb-4" src="assets/img/talleres/taller1.png" alt="Taller 1" />
                                     <p>Taller enfocado en el desarrollo de ejercicios fundamentales de programación.</p>
-                                    <a href="assets/img/talleres/taller1.pdf" class="btn btn-success" target="_blank">
+                                    <a href="assets/img/talleres/taller1.pdf" class="btn btn-success me-2" target="_blank">
                                         <i class="fas fa-file-pdf me-2"></i>Ver PDF
                                     </a>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -461,9 +668,9 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Taller 3</h2>
                                     <p class="item-intro text-muted">Práctica avanzada</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/talleres/taller3.png" alt="Taller 3" />
+                                    <img class="img-fluid d-block mx-auto mb-4" src="assets/img/talleres/taller3.png" alt="Taller 3" />
                                     <p>Ejercicios avanzados aplicando conceptos de programación.</p>
-                                    <a href="assets/img/talleres/taller3.pdf" class="btn btn-success" target="_blank">
+                                    <a href="assets/img/talleres/taller3.pdf" class="btn btn-success me-2" target="_blank">
                                         <i class="fas fa-file-pdf me-2"></i>Ver PDF
                                     </a>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -488,11 +695,11 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Investigación 1</h2>
                                     <p class="item-intro text-muted">Trabajo de investigación</p>
-                                    <div class="portfolio-icon gradient-investigacion mb-4">
+                                    <div class="portfolio-icon icon-border-1 mb-4" style="height: 250px;">
                                         <i class="fas fa-search"></i>
                                     </div>
                                     <p>Investigación sobre temas relevantes del curso.</p>
-                                    <a href="assets/img/talleres/investigacion1.pdf" class="btn btn-success" target="_blank">
+                                    <a href="assets/img/talleres/investigacion1.pdf" class="btn btn-success me-2" target="_blank">
                                         <i class="fas fa-file-pdf me-2"></i>Ver PDF
                                     </a>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -517,11 +724,11 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Investigación 2</h2>
                                     <p class="item-intro text-muted">Análisis y desarrollo</p>
-                                    <div class="portfolio-icon gradient-investigacion mb-4">
+                                    <div class="portfolio-icon icon-border-2 mb-4" style="height: 250px;">
                                         <i class="fas fa-book-open"></i>
                                     </div>
                                     <p>Investigación profunda sobre conceptos avanzados.</p>
-                                    <a href="assets/img/talleres/investigacion2.docx" class="btn btn-primary" target="_blank">
+                                    <a href="assets/img/talleres/investigacion2.docx" class="btn btn-primary me-2" target="_blank">
                                         <i class="fas fa-file-word me-2"></i>Ver DOCX
                                     </a>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -547,11 +754,11 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Laboratorio 1</h2>
                                     <p class="item-intro text-muted">Práctica de laboratorio</p>
-                                    <div class="portfolio-icon gradient-lab mb-4">
+                                    <div class="portfolio-icon icon-border-3 mb-4" style="height: 250px;">
                                         <i class="fas fa-flask"></i>
                                     </div>
                                     <p>Primera práctica realizada en laboratorio aplicando conceptos teóricos.</p>
-                                    <a href="assets/img/laboratorios/lab1.pdf" class="btn btn-success" target="_blank">
+                                    <a href="assets/img/laboratorios/lab1.pdf" class="btn btn-success me-2" target="_blank">
                                         <i class="fas fa-file-pdf me-2"></i>Ver PDF
                                     </a>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -576,11 +783,11 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Laboratorio 2</h2>
                                     <p class="item-intro text-muted">Desarrollo práctico</p>
-                                    <div class="portfolio-icon gradient-lab mb-4">
+                                    <div class="portfolio-icon icon-border-1 mb-4" style="height: 250px;">
                                         <i class="fas fa-laptop-code"></i>
                                     </div>
                                     <p>Segunda práctica con desarrollo de ejercicios complejos.</p>
-                                    <a href="assets/img/laboratorios/lab2.pdf" class="btn btn-success" target="_blank">
+                                    <a href="assets/img/laboratorios/lab2.pdf" class="btn btn-success me-2" target="_blank">
                                         <i class="fas fa-file-pdf me-2"></i>Ver PDF
                                     </a>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -606,11 +813,11 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Ejercicio Práctico 1</h2>
                                     <p class="item-intro text-muted">Evaluación práctica</p>
-                                    <div class="portfolio-icon gradient-parcial mb-4">
+                                    <div class="portfolio-icon icon-border-2 mb-4" style="height: 250px;">
                                         <i class="fas fa-pencil-alt"></i>
                                     </div>
                                     <p>Ejercicio práctico evaluativo del primer periodo.</p>
-                                    <a href="assets/img/parciales/ejerciciopractico1.pdf" class="btn btn-success" target="_blank">
+                                    <a href="assets/img/parciales/ejerciciopractico1.pdf" class="btn btn-success me-2" target="_blank">
                                         <i class="fas fa-file-pdf me-2"></i>Ver PDF
                                     </a>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -635,11 +842,11 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Parcial 1</h2>
                                     <p class="item-intro text-muted">Primera evaluación</p>
-                                    <div class="portfolio-icon gradient-parcial mb-4">
+                                    <div class="portfolio-icon icon-border-3 mb-4" style="height: 250px;">
                                         <i class="fas fa-file-alt"></i>
                                     </div>
                                     <p>Primer examen parcial del curso.</p>
-                                    <a href="assets/img/parciales/parcial1.docx" class="btn btn-primary" target="_blank">
+                                    <a href="assets/img/parciales/parcial1.docx" class="btn btn-primary me-2" target="_blank">
                                         <i class="fas fa-file-word me-2"></i>Ver DOCX
                                     </a>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -664,9 +871,9 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Parcial 2</h2>
                                     <p class="item-intro text-muted">Segunda evaluación</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/parciales/parcial2.png" alt="Parcial 2" />
+                                    <img class="img-fluid d-block mx-auto mb-4" src="assets/img/parciales/parcial2.png" alt="Parcial 2" />
                                     <p>Segundo examen parcial del curso.</p>
-                                    <a href="assets/img/parciales/parcial2.pdf" class="btn btn-success" target="_blank">
+                                    <a href="assets/img/parciales/parcial2.pdf" class="btn btn-success me-2" target="_blank">
                                         <i class="fas fa-file-pdf me-2"></i>Ver PDF
                                     </a>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -691,11 +898,11 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Examen Final</h2>
                                     <p class="item-intro text-muted">Evaluación final del curso</p>
-                                    <div class="portfolio-icon gradient-examen mb-4">
+                                    <div class="portfolio-icon icon-border-1 mb-4" style="height: 250px;">
                                         <i class="fas fa-graduation-cap"></i>
                                     </div>
                                     <p>Evaluación final que integra todos los conocimientos adquiridos durante el curso.</p>
-                                    <a href="assets/img/examen/final.pdf" class="btn btn-success" target="_blank">
+                                    <a href="assets/img/examen/final.pdf" class="btn btn-success me-2" target="_blank">
                                         <i class="fas fa-file-pdf me-2"></i>Ver PDF
                                     </a>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -713,10 +920,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
