@@ -29,8 +29,8 @@
 
 /* contenedor fijo de imagen para evitar que el hover empuje el texto */
 #sobremi .skill-img-wrap {
-  width: 230px;
-  height: 230px;
+  width: 430px;
+  height: 430px;
   overflow: hidden;
   border-radius: 12px;
   display: flex;
@@ -55,7 +55,7 @@
 /* Hover: escala, borde amarillo y sombra — NO mueve el flujo del documento */
 #sobremi .skill-img-wrap:hover .skill-img,
 #sobremi .skill-img:focus {
-  transform: scale(1.12);
+  transform: scale(1.28);
   outline: none;
   border-color: #ffcc00;
   box-shadow: 0 10px 30px rgba(255,204,0,0.12);
