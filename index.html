@@ -17,45 +17,16 @@
         <link href="css/styles.css" rel="stylesheet" />
         <style>
             /* Estilos modernos y creativos */
-            .masthead {
-                background-image: url('assets/img/nuevofondo.png');
-                background-size: cover;
-                background-position: center;
-                background-attachment: fixed;
+            
+            /* Logo en el menú más grande */
+            .navbar-brand img {
+                max-height: 80px !important;
+                transition: all 0.3s ease;
             }
             
-            /* Overlay oscuro sobre el fondo */
-            .masthead::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(33, 37, 41, 0.7);
-            }
-            
-            .masthead .container {
-                position: relative;
-                z-index: 1;
-            }
-            
-            /* Logo principal modernizado - MÁS GRANDE */
-            .masthead-logo {
-                max-width: 500px;
-                margin: 0 auto 2rem;
-                filter: drop-shadow(0 10px 30px rgba(232, 182, 0, 0.4));
-                animation: floatLogo 3s ease-in-out infinite;
-            }
-            
-            @keyframes floatLogo {
-                0%, 100% { transform: translateY(0px); }
-                50% { transform: translateY(-20px); }
-            }
-            
-            .masthead-logo img {
-                width: 100%;
-                height: auto;
+            .navbar-brand img:hover {
+                transform: scale(1.05);
+                filter: drop-shadow(0 5px 15px rgba(232, 182, 0, 0.4));
             }
             
             /* Botón principal con color amarillo */
@@ -292,7 +263,9 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <a class="btn btn-primary btn-xl text-uppercase" href="#sobremi">Explorar mi trabajo</a>
+                <div class="masthead-subheading">Magdalena Gonzalez</div>
+                <div class="masthead-heading text-uppercase">Portafolio</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#sobremi">Bienvenido</a>
             </div>
         </header>
         
@@ -351,7 +324,7 @@
         </section>
 
         <!-- TALLERES -->
-        <section class="page-section bg-light" id="Talleres">
+        <section class="page-section" id="Talleres">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Talleres</h2>
@@ -430,7 +403,7 @@
         </section>
 
         <!-- LABORATORIOS -->
-        <section class="page-section" id="Laboratorios">
+        <section class="page-section bg-light" id="Laboratorios">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Laboratorios</h2>
@@ -477,7 +450,7 @@
         </section>
 
         <!-- PARCIALES -->
-        <section class="page-section bg-light" id="Parciales">
+        <section class="page-section" id="Parciales">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Parciales</h2>
@@ -540,7 +513,7 @@
         </section>
 
         <!-- EXAMEN FINAL -->
-        <section class="page-section" id="Examen">
+        <section class="page-section bg-light" id="Examen">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Examen Final</h2>
@@ -569,7 +542,7 @@
         </section>
 
         <!-- CONTACTO -->
-        <section class="page-section bg-light" id="contacto">
+        <section class="page-section" id="contacto">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Contacto</h2>
