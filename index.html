@@ -15,6 +15,54 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            /* Estilos adicionales para los iconos cuando no hay imagen */
+            .portfolio-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 300px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 8px;
+                transition: all 0.3s ease;
+            }
+            
+            .portfolio-icon i {
+                font-size: 80px;
+                color: white;
+                transition: all 0.3s ease;
+            }
+            
+            .portfolio-item:hover .portfolio-icon {
+                transform: scale(1.05);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            }
+            
+            .portfolio-item:hover .portfolio-icon i {
+                transform: scale(1.1);
+            }
+            
+            /* Gradientes diferentes para cada tipo */
+            .gradient-taller {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            }
+            
+            .gradient-investigacion {
+                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            }
+            
+            .gradient-lab {
+                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            }
+            
+            .gradient-parcial {
+                background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            }
+            
+            .gradient-examen {
+                background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            }
+        </style>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -32,6 +80,7 @@
                         <li class="nav-item"><a class="nav-link" href="#Laboratorios">Laboratorios</a></li>
                         <li class="nav-item"><a class="nav-link" href="#Parciales">Parciales</a></li>
                         <li class="nav-item"><a class="nav-link" href="#Examen">Examen</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -146,7 +195,9 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="Investigación 1" />
+                                <div class="portfolio-icon gradient-investigacion">
+                                    <i class="fas fa-search"></i>
+                                </div>
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Investigación 1</div>
@@ -162,7 +213,9 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="Investigación 2" />
+                                <div class="portfolio-icon gradient-investigacion">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Investigación 2</div>
@@ -189,7 +242,9 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="Laboratorio 1" />
+                                <div class="portfolio-icon gradient-lab">
+                                    <i class="fas fa-flask"></i>
+                                </div>
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Laboratorio 1</div>
@@ -205,7 +260,9 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="Laboratorio 2" />
+                                <div class="portfolio-icon gradient-lab">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Laboratorio 2</div>
@@ -232,7 +289,9 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="Ejercicio Práctico 1" />
+                                <div class="portfolio-icon gradient-parcial">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </div>
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Ejercicio Práctico 1</div>
@@ -248,7 +307,9 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="Parcial 1" />
+                                <div class="portfolio-icon gradient-parcial">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Parcial 1</div>
@@ -276,15 +337,82 @@
             </div>
         </section>
 
+        <!-- EXAMEN FINAL -->
+        <section class="page-section" id="Examen">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Examen Final</h2>
+                    <h3 class="section-subheading text-muted">Evaluación final del curso</h3>
+                </div>
+                <div class="row justify-content-center">
+                    <!-- Examen Final -->
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#examenFinalModal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <div class="portfolio-icon gradient-examen">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Examen Final</div>
+                                <div class="portfolio-caption-subheading text-muted">Evaluación final</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="page-section bg-light" id="contacto">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Contacto</h2>
+                    <h3 class="section-subheading text-muted">Puedes encontrarme en las siguientes plataformas</h3>
+                </div>
+                <div class="row text-center mt-5">
+                    <div class="col-md-4 mb-4">
+                        <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" class="text-decoration-none">
+                            <div class="contact-box p-4">
+                                <i class="fab fa-linkedin fa-4x mb-3" style="color: #0077b5;"></i>
+                                <h4>LinkedIn</h4>
+                                <p class="text-muted">Conéctate conmigo profesionalmente</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <a href="https://www.youtube.com/@tu-canal" target="_blank" class="text-decoration-none">
+                            <div class="contact-box p-4">
+                                <i class="fab fa-youtube fa-4x mb-3" style="color: #ff0000;"></i>
+                                <h4>YouTube</h4>
+                                <p class="text-muted">Mira mis videos y tutoriales</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <a href="mailto:tu-email@ejemplo.com" class="text-decoration-none">
+                            <div class="contact-box p-4">
+                                <i class="fas fa-envelope fa-4x mb-3" style="color: #d44638;"></i>
+                                <h4>Email</h4>
+                                <p class="text-muted">Envíame un correo electrónico</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-start">Copyright &copy; Magdalena González 2024</div>
                     <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/tu-perfil" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.youtube.com/@tu-canal" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
                         <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
@@ -360,7 +488,9 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Investigación 1</h2>
                                     <p class="item-intro text-muted">Trabajo de investigación</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="Investigación 1" />
+                                    <div class="portfolio-icon gradient-investigacion mb-4">
+                                        <i class="fas fa-search"></i>
+                                    </div>
                                     <p>Investigación sobre temas relevantes del curso.</p>
                                     <a href="assets/img/talleres/investigacion1.pdf" class="btn btn-success" target="_blank">
                                         <i class="fas fa-file-pdf me-2"></i>Ver PDF
@@ -387,7 +517,9 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Investigación 2</h2>
                                     <p class="item-intro text-muted">Análisis y desarrollo</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="Investigación 2" />
+                                    <div class="portfolio-icon gradient-investigacion mb-4">
+                                        <i class="fas fa-book-open"></i>
+                                    </div>
                                     <p>Investigación profunda sobre conceptos avanzados.</p>
                                     <a href="assets/img/talleres/investigacion2.docx" class="btn btn-primary" target="_blank">
                                         <i class="fas fa-file-word me-2"></i>Ver DOCX
@@ -415,7 +547,9 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Laboratorio 1</h2>
                                     <p class="item-intro text-muted">Práctica de laboratorio</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="Laboratorio 1" />
+                                    <div class="portfolio-icon gradient-lab mb-4">
+                                        <i class="fas fa-flask"></i>
+                                    </div>
                                     <p>Primera práctica realizada en laboratorio aplicando conceptos teóricos.</p>
                                     <a href="assets/img/laboratorios/lab1.pdf" class="btn btn-success" target="_blank">
                                         <i class="fas fa-file-pdf me-2"></i>Ver PDF
@@ -442,7 +576,9 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Laboratorio 2</h2>
                                     <p class="item-intro text-muted">Desarrollo práctico</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="Laboratorio 2" />
+                                    <div class="portfolio-icon gradient-lab mb-4">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
                                     <p>Segunda práctica con desarrollo de ejercicios complejos.</p>
                                     <a href="assets/img/laboratorios/lab2.pdf" class="btn btn-success" target="_blank">
                                         <i class="fas fa-file-pdf me-2"></i>Ver PDF
@@ -470,7 +606,9 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Ejercicio Práctico 1</h2>
                                     <p class="item-intro text-muted">Evaluación práctica</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="Ejercicio Práctico 1" />
+                                    <div class="portfolio-icon gradient-parcial mb-4">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </div>
                                     <p>Ejercicio práctico evaluativo del primer periodo.</p>
                                     <a href="assets/img/parciales/ejerciciopractico1.pdf" class="btn btn-success" target="_blank">
                                         <i class="fas fa-file-pdf me-2"></i>Ver PDF
@@ -497,7 +635,9 @@
                                 <div class="modal-body">
                                     <h2 class="text-uppercase">Parcial 1</h2>
                                     <p class="item-intro text-muted">Primera evaluación</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="Parcial 1" />
+                                    <div class="portfolio-icon gradient-parcial mb-4">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
                                     <p>Primer examen parcial del curso.</p>
                                     <a href="assets/img/parciales/parcial1.docx" class="btn btn-primary" target="_blank">
                                         <i class="fas fa-file-word me-2"></i>Ver DOCX
@@ -527,6 +667,35 @@
                                     <img class="img-fluid d-block mx-auto" src="assets/img/parciales/parcial2.png" alt="Parcial 2" />
                                     <p>Segundo examen parcial del curso.</p>
                                     <a href="assets/img/parciales/parcial2.pdf" class="btn btn-success" target="_blank">
+                                        <i class="fas fa-file-pdf me-2"></i>Ver PDF
+                                    </a>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>Cerrar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Examen Final Modal -->
+        <div class="portfolio-modal modal fade" id="examenFinalModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Examen Final</h2>
+                                    <p class="item-intro text-muted">Evaluación final del curso</p>
+                                    <div class="portfolio-icon gradient-examen mb-4">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <p>Evaluación final que integra todos los conocimientos adquiridos durante el curso.</p>
+                                    <a href="assets/img/examen/final.pdf" class="btn btn-success" target="_blank">
                                         <i class="fas fa-file-pdf me-2"></i>Ver PDF
                                     </a>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
