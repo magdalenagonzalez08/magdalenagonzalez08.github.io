@@ -17,28 +17,30 @@
     text-align: center;
     padding: 20px;
     transition: transform 0.3s ease;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .skill-img {
-    width: 220px;        /* tamaño visible uniforme */
-    height: 180px;       /* fuerza altura fija */
-    object-fit: contain; /* ajusta sin cortar ni deformar */
+    width: 100%;
+    max-width: 280px;      /* ancho máximo */
+    height: 200px;         /* altura fija para uniformidad */
+    object-fit: contain;   /* mantiene proporciones sin cortar */
     border-radius: 12px;
     transition: all 0.3s ease-in-out;
     border: 4px solid transparent;
+    background-color: #f8f9fa; /* fondo sutil para que se vea uniforme */
+    padding: 10px;         /* espacio interno para las imágenes */
 }
 
 /* EFECTO AL PASAR EL MOUSE */
 .skill-img:hover {
     transform: scale(1.15);
-    border-color: #FFD700; /* borde amarillo */
+    border-color: #FFD700;  /* borde amarillo dorado */
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4); /* sombra dorada suave */
 }
-
-/* Mantiene las columnas alineadas aunque una imagen sea más alargada */
-.skill-box {
-    min-height: 420px;
-}
-
 
 
 
